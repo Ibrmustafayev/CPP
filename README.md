@@ -1,2 +1,2 @@
 # C++
-##Will be modified soon!
+Will be modified soon!
