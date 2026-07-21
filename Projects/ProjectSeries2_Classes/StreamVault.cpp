@@ -103,7 +103,7 @@ void Movie :: printInfo() const {
     cout << "[Movie] " << title << " (" << releaseYear << ") - Rating: " << rating << " - " << durationMinutes << " min - Watch Score: " << calculateWatchScore() << "\n";
 }
 
-double Series :: calculateWatchScore() const {return rating * seasons * episodesPerSeason * 0.1;}
+double Series :: calculateWatchScore() const {return rating * totalEpisodes() * 0.1;}
 void Series :: printInfo() const {
     cout << "[Series] " << title << " (" << releaseYear << ") - Rating: " << rating << " - " << seasons << " seasons, " << totalEpisodes() << " episodes - Watch Score: " << calculateWatchScore() << "\n";
 }
