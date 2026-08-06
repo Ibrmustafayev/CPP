@@ -193,7 +193,7 @@ void Warrior :: useItem(string item, Character &target) {
 
         if (item == "Bomb") {
             target.takeDamage(25);
-            cout << name << " explodes Bomb...\n";
+            cout << name << " explodes Bomb at " << target.getName() << " for 25 damage!\n";
             it -> second--;
             if (it->second == 0) {inventory.erase(it);}
         } else {
