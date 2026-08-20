@@ -45,18 +45,8 @@ Two programs exploring `unique_ptr`, `shared_ptr`, `weak_ptr`, and move semantic
 ### 📦 [STL](STL/)
 STL containers and algorithms — `map`, `set`, `unordered_map`, lambdas, and `vector<pair>` for text and data processing.
 
----
-
-### 🗂️ Projects
-
-#### 📐 [Projects/ProjectSeries1](Projects/ProjectSeries1/)
-Three mini-projects applying vectors, raw pointers, and STL — vector stats, word sorter, and a contact book manager.
-
-#### 🏛️ [Projects/ProjectSeries2_Classes](Projects/ProjectSeries2_Classes/)
-Three OOP projects — a game entity combat system, a shape collection with operator overloading, and a media library with watch scores.
-
-#### 🎬 [Projects/WatchManager](Projects/WatchManager/)
-A full console-based movie and series manager with OOP, templates, custom exceptions, and file persistence.
+### 🗂️ [Projects](Projects/)
+Includes various projects coded in C++.
 
 ---
 
