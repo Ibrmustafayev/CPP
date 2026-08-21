@@ -64,10 +64,10 @@ SCORE: 30
 
 ```bash
 # Compile
-g++ Snake.cpp -o Snake
+g++ game.cpp -o game
 
 # Run
-Snake.exe
+game.exe
 ```
 
 > **Note:** `conio.h` and `windows.h` are not available on Linux or macOS. This program will not compile on those platforms without modifications.
