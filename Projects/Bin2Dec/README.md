@@ -40,7 +40,7 @@ Bin2Dec takes a binary string from the user and converts it to its decimal equiv
 ## 🖥️ Example Output
 
 ```
-=== Binary to Decimal ===
+    === Binary to Decimal ===
 Input ('q' to quit): 1010
 1010 (Binary) => 10 (Decimal)
 
@@ -62,13 +62,13 @@ Goodbye!!!
 
 ```bash
 # Compile
-g++ Bin2Dec.cpp -o Bin2Dec
+g++ main.cpp -o main
 
 # Run (Linux / macOS)
-./Bin2Dec
+./main
 
 # Run (Windows)
-Bin2Dec.exe
+main.exe
 ```
 
 ---
