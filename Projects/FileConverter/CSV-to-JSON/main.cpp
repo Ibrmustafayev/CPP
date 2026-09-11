@@ -47,7 +47,7 @@ int main() {
     
     ofstream file2(filename2);
     if (!file2.is_open()) {
-        cout << "Error: Unable to create a .ordered_json file!\n";
+        cout << "Error: Unable to create a .json file!\n";
         return 0;
     }
 
