@@ -63,12 +63,20 @@ vector<string> separate(const string &input) {
     string field;
     bool inQuotes = false;
 
-    for (char ch : input) {
-        if (ch == '"') inQuotes = !inQuotes;
+    for (size_t i = 0; i < input.size(); i++) {
+        char ch = input[i];
+
+        if (ch == '"') {
+            if (inQuotes && i + 1 < input.size() && input[i + 1] == '"') {
+                field += '"';
+                i++;
+            } else inQuotes = !inQuotes;
+        }
         else if (ch == ',' && !inQuotes) {
             result.push_back(field);
             field.clear();
-        } else field += ch;
+        }
+        else field += ch;
     }
 
     result.push_back(field);
