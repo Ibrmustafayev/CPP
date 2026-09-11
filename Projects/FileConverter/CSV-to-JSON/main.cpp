@@ -7,6 +7,7 @@
 using namespace std;
 using ordered_json = nlohmann :: ordered_json;
 
+bool hasCsvExtension(const string &filename);
 vector<string> separate(const string &input);
 ordered_json parseValue(const string &value);
 
@@ -18,6 +19,11 @@ int main() {
 
     cout << "\t=== CSV to JSON ===\nFilename (e.g. 'test.csv'): ";
     cin >> filename1;
+
+    if (!hasCsvExtension(filename1)) {
+        cout << "Error: Type the name of any '.csv' file!\n";
+        return 0;
+    }
 
     ifstream file1(filename1);
     if (!file1.is_open()) {
@@ -47,7 +53,7 @@ int main() {
     
     ofstream file2(filename2);
     if (!file2.is_open()) {
-        cout << "Error: Unable to create a .json file!\n";
+        cout << "Error: Unable to create a '.json' file!\n";
         return 0;
     }
 
@@ -56,6 +62,13 @@ int main() {
     file2.close();
 
     return 0;
+}
+
+bool hasCsvExtension(const string &filename) {
+    const string ext = ".csv";
+
+    if (filename.length() >= ext.length()) return filename.compare(filename.length() - ext.length(), ext.length(), ext) == 0;
+    return false;
 }
 
 vector<string> separate(const string &input) {
@@ -70,13 +83,12 @@ vector<string> separate(const string &input) {
             if (inQuotes && i + 1 < input.size() && input[i + 1] == '"') {
                 field += '"';
                 i++;
-            } else inQuotes = !inQuotes;
-        }
-        else if (ch == ',' && !inQuotes) {
+            }
+            else inQuotes = !inQuotes;
+        } else if (ch == ',' && !inQuotes) {
             result.push_back(field);
             field.clear();
-        }
-        else field += ch;
+        } else field += ch;
     }
 
     result.push_back(field);
@@ -86,6 +98,8 @@ vector<string> separate(const string &input) {
 ordered_json parseValue(const string &value) {
     if (value.empty()) return nullptr;
 
+    if (value.size() > 1 && value[0] == '0' && value[1] != '.') return value;
+ 
     stringstream ss(value);
     double d;
 
