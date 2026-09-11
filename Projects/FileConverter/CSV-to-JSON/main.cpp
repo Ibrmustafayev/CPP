@@ -21,7 +21,7 @@ int main() {
 
     ifstream file1(filename1);
     if (!file1.is_open()) {
-        cout << "Error: Unable to find " << filename1 << " in the proper file array!\n";
+        cout << "Error: Unable to find " << filename1 << " in the proper file directory!\n";
         return 0;
     }
 
